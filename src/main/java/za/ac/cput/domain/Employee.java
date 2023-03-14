@@ -1,11 +1,16 @@
+/*
+ * Employee.java
+ * This is the POJO class for Employee
+ * Brandon Wise - 220049173
+ * 14 March 2023
+ */
+
 package za.ac.cput.domain;
 
 public class Employee {
         private String employeeNumber;
         private String firstName;
         private String lastName;
-
-    public Employee(){}
 
     public Employee(String employeeNumber, String firstName, String lastName){
 
@@ -30,27 +35,14 @@ public class Employee {
 
     public String getLastName() { return lastName; }
 
-    public void setEmployeeNumber(String employeeNumber) {
-        this.employeeNumber = employeeNumber;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Employee)) {
+        if (!(obj instanceof Employee other)) {
             return false;
         }
-        Employee other = (Employee) obj;
         return this.employeeNumber.equals(other.employeeNumber)
                 && this.firstName.equals(other.firstName)
                 && this.lastName.equals(other.lastName);
